@@ -3,9 +3,8 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	// "time"
 
-	"github.com/jullmi/dbPostgreSQL"
+	dbpostgresql "github.com/jullmi/dbPostgreSQL"
 )
 
 var MIN = 0
@@ -37,19 +36,8 @@ func main() {
 	dbpostgresql.Username = "postgres"
 	dbpostgresql.Password = "postgres"
 	dbpostgresql.Database = "go"
+	dbpostgresql.Sslmode = "disable"
 
-	data, err := dbpostgresql.ListUsers()
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-
-	for _, v := range data {
-		fmt.Println(v)
-	}
-
-	// SEED := time.Now().Unix()
-	// source := rand.New(rand.NewSource(SEED))
 	randomUsername := getString(5)
 
 	temp := dbpostgresql.Userdata{
@@ -64,10 +52,12 @@ func main() {
 		fmt.Println("There was an error adding user", temp.Username)
 	}
 
-	err = dbpostgresql.DeleteUser(id)
+
+	err := dbpostgresql.DeleteUser(id)
 	if err != nil {
 		fmt.Println(err)
 	}
+
 	//try delete user again
 	err = dbpostgresql.DeleteUser(id)
 	if err != nil {
@@ -79,6 +69,7 @@ func main() {
 		fmt.Println("There was an error adding user", temp.Username)
 	}
 
+
 	temp = dbpostgresql.Userdata{
 		Username:    randomUsername,
 		Name:        "Julia",
@@ -89,6 +80,15 @@ func main() {
 	err = dbpostgresql.UpdateUser(temp)
 	if err != nil {
 		fmt.Println(err)
+	}
+
+	data, err := dbpostgresql.ListUsers()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	for _, v := range data {
+		fmt.Println(v)
 	}
 
 }

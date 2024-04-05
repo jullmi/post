@@ -1,4 +1,4 @@
-github.com/jullmi/dbPostgreSQL v0.0.0-20240405071946-da116ec2d8af h1:dldyxOx0ZCFcq0KQZNe7ps0JOuxT42703d7yAHz2KVI=
-github.com/jullmi/dbPostgreSQL v0.0.0-20240405071946-da116ec2d8af/go.mod h1:QKMC3KYsea/nlEIdCNeT248yZjckuhrStuTM4hE1YiQ=
+github.com/jullmi/dbPostgreSQL v0.0.0-20240405131900-b4a2277639b8 h1:E20K8Qgks0hQzpVOUrJOYa5giDj/q8nkuxzz2sBXZzw=
+github.com/jullmi/dbPostgreSQL v0.0.0-20240405131900-b4a2277639b8/go.mod h1:QKMC3KYsea/nlEIdCNeT248yZjckuhrStuTM4hE1YiQ=
 github.com/lib/pq v1.10.9 h1:YXG7RB+JIjhP29X+OtkiDnYaXQwpS4JEWq7dtCCRUEw=
 github.com/lib/pq v1.10.9/go.mod h1:AlVN5x4E4T544tWzH6hKfbfQvm3HdbOxrmggDNAPY9o=
